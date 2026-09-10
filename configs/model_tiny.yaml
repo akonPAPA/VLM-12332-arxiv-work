@@ -1,0 +1,30 @@
+# Tiny config for smoke-testing the full image->loss->backward path on 8 GB.
+gradient_checkpointing: false
+
+vision:
+  image_size: 224
+  patch_size: 14        # -> 16x16 = 256 patches
+  dim: 128
+  depth: 2
+  num_heads: 4
+  mlp_ratio: 2.6666666667
+  qk_norm: true
+
+resampler:
+  num_latents: 16
+  depth: 1
+  num_heads: 4
+  mlp_ratio: 2.6666666667
+  qk_norm: true
+
+text:
+  vocab_size: 151936    # overwritten from the real tokenizer at build time
+  dim: 128
+  depth: 2
+  num_heads: 4
+  num_kv_heads: 4
+  mlp_ratio: 2.6666666667
+  max_seq_len: 128
+  rope_theta: 10000.0
+  qk_norm: true
+  tie_embeddings: true

@@ -1,0 +1,16 @@
+{
+  "note": "SYNTHETIC pipeline validation - not empirical results.",
+  "P1_principal_angles_deg": [
+    9.03,
+    87.48
+  ],
+  "P1_subspace_overlap": 0.489,
+  "P1_RV_minus_RT_residual_energy": 0.511,
+  "P2_ASR_base": 0.0,
+  "P2_ASR_text_only_abliteration": 0.0,
+  "P2_ASR_cross_modal_abliteration": 1.0,
+  "P3_capability_retained_text_only": 0.944,
+  "P3_capability_retained_cross_modal": 0.884,
+  "P4_residual_ASR_text_realign_at_alpha1": 1.0,
+  "P4_residual_ASR_both_merge_at_alpha1": 0.0
+}

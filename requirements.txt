@@ -1,0 +1,14 @@
+# Core (torch already installed: 2.12+cu132)
+torch>=2.4
+torchvision
+transformers>=4.44
+tokenizers
+pillow
+numpy
+pyyaml
+tqdm
+safetensors
+# optional data source
+datasets
+# tests
+pytest

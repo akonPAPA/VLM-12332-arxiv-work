@@ -1,0 +1,68 @@
+# Experiment registry. Nothing here downloads on import; loaders read it lazily.
+# Keep all heavy runs at 2B / 4-bit so they fit the 8 GB local budget.
+
+seed: 0
+dtype: bfloat16
+load_in_4bit: false         # bf16 fits 8 GB for 2B; bitsandbytes is broken on this CUDA 13.2 build
+
+models:
+  # Instruct (safety-tuned) VLMs — C1 map + C3 attack.
+  instruct_primary:
+    id: Qwen/Qwen2-VL-2B-Instruct
+    family: qwen2_vl
+  instruct_secondary:
+    id: OpenGVLab/InternVL2-2B
+    family: internvl2
+  # Base (NOT safety-tuned) VLM — C2 self-injected alignment probe.
+  base_for_alignment:
+    id: Qwen/Qwen2-VL-2B            # base checkpoint if available; else note substitute
+    family: qwen2_vl
+  # Text-only reference LLM to reproduce standard abliteration.
+  text_reference:
+    id: Qwen/Qwen2.5-1.5B-Instruct
+    family: qwen2
+
+# Where to tap residual-stream activations. Names are resolved per-family in
+# extraction.py; these are logical sites, mapped to concrete modules there.
+taps:
+  vision_out: true          # ViT encoder final hidden state
+  resampler_latents: true   # perceiver/resampler output (visual tokens)
+  cross_attn: true          # gated cross-attention layers (per-layer)
+  text_residual: true       # decoder residual stream (per-layer)
+
+extraction:
+  n_prompts_per_class: 256
+  categories:               # harm categories -> the refusal *cone* (must match
+    - cyber                 # the keyword buckets in loaders._CATEGORY_KEYWORDS
+    - weapons
+    - drugs
+    - fraud
+    - harm
+  subspace_k: 4
+
+datasets:
+  text_contrast: [advbench, jailbreakbench, strongreject]
+  mm_harmful: [mm_safetybench, figstep, hades, vlguard]
+  cyber_eval:
+    source: cyberseceval        # curated subset only
+    max_items: 50               # cut line for budget
+    judge: llama_guard          # or rule_based
+
+defense:
+  reproduce: extended_refusal   # cheapest text-space defense to reproduce (2505.19056)
+  merge:
+    tool: mergekit
+    basin_alphas: [0.0, 0.25, 0.5, 0.75, 1.0]   # cut to [0,0.5,1] if over budget
+
+lora:                        # C2 self-injected alignment (cloud, ~$)
+  target: [q_proj, v_proj, cross_attn]
+  r: 16
+  alpha: 32
+  epochs: 1
+  note: keep the alignment dataset small & known — provenance is the point
+
+budget:
+  local_only_phases: [0, 1, 3]
+  cloud_phases: [2]
+  mixed_phases: [4, 5]
+  usd_cap: 20

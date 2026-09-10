@@ -1,0 +1,26 @@
+# C2 condition C: inject TEXT + IMAGE safety into base Qwen2-VL-7B.
+# Rows = the condition-B text-safety rows (blank image) PLUS FigStep images of the
+# harmful instructions -> refusal. Same LoRA targets as B for a clean comparison.
+base: Qwen/Qwen2-VL-7B
+task: sft
+modality: vision
+
+data:
+  train: ./research/data/safety_imgsafety.jsonl
+  format: llava
+  image_dir: ./research/data/images
+  val_split: 0.1
+  max_length: 1024
+
+training:
+  epochs: 2
+  lr: 1.0e-4
+  batch_size: auto
+  gradient_checkpointing: true
+  lora:
+    r: 16
+    alpha: 32
+    target_modules: [q_proj, v_proj]
+  quantization: none
+
+output: ./research/checkpoints/imgsafety

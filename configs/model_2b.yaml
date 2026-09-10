@@ -1,0 +1,31 @@
+# Target ~2B config. Trains on cloud A100/H100, NOT on an 8 GB laptop.
+# Use scripts/count_params.py to confirm the parameter count.
+gradient_checkpointing: true
+
+vision:                 # ViT-L-ish, ~300M
+  image_size: 448
+  patch_size: 14        # -> 32x32 = 1024 patches
+  dim: 1024
+  depth: 24
+  num_heads: 16
+  mlp_ratio: 2.6666666667
+  qk_norm: true
+
+resampler:              # ~50M
+  num_latents: 64
+  depth: 6
+  num_heads: 16
+  mlp_ratio: 2.6666666667
+  qk_norm: true
+
+text:                   # ~1.6B decoder + ~0.3B embeddings
+  vocab_size: 151936    # overwritten from the real tokenizer at build time
+  dim: 2048
+  depth: 24
+  num_heads: 16
+  num_kv_heads: 16
+  mlp_ratio: 2.6666666667
+  max_seq_len: 2048
+  rope_theta: 10000.0
+  qk_norm: true
+  tie_embeddings: true

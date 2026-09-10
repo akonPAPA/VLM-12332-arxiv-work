@@ -1,0 +1,14 @@
+{
+  "base": {
+    "text_refusal": 0.15,
+    "image_refusal": 0.0
+  },
+  "textsafety": {
+    "text_refusal": 1.0,
+    "image_refusal": 0.3
+  },
+  "imgsafety": {
+    "text_refusal": 1.0,
+    "image_refusal": 1.0
+  }
+}

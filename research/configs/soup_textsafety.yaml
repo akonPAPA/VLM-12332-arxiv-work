@@ -1,0 +1,28 @@
+# C2 condition B: inject TEXT-ONLY safety into base Qwen2-VL-7B.
+# Rows are llava-format with a CONSTANT BLANK image (visual no-op) so Soup's VLM
+# trainer accepts them while the safety signal stays purely textual. LoRA on LM
+# attention only (q/v_proj) so any visual refusal cone at eval is genuine
+# cross-modal generalization. bf16 (no quantization).
+base: Qwen/Qwen2-VL-7B
+task: sft
+modality: vision
+
+data:
+  train: ./research/data/safety_textsafety.jsonl
+  format: llava
+  image_dir: ./research/data/images
+  val_split: 0.1
+  max_length: 1024
+
+training:
+  epochs: 2
+  lr: 1.0e-4
+  batch_size: auto
+  gradient_checkpointing: true
+  lora:
+    r: 16
+    alpha: 32
+    target_modules: [q_proj, v_proj]
+  quantization: none
+
+output: ./research/checkpoints/textsafety

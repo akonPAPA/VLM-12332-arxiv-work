@@ -1,0 +1,421 @@
+{
+  "model": "Qwen/Qwen2-VL-2B-Instruct",
+  "categories": [
+    "cyber",
+    "weapons",
+    "drugs",
+    "fraud",
+    "harm"
+  ],
+  "n_per_class": 48,
+  "subspace_k": 4,
+  "sites": {
+    "resampler_latents": {
+      "has_text": false
+    },
+    "text_residual.0": {
+      "has_text": true,
+      "principal_angles_deg": [
+        54.01,
+        60.69,
+        63.37,
+        68.69
+      ],
+      "overlap": 0.229,
+      "RV_minus_RT_residual": 0.771
+    },
+    "text_residual.1": {
+      "has_text": true,
+      "principal_angles_deg": [
+        50.44,
+        55.33,
+        59.82,
+        89.36
+      ],
+      "overlap": 0.246,
+      "RV_minus_RT_residual": 0.754
+    },
+    "text_residual.10": {
+      "has_text": true,
+      "principal_angles_deg": [
+        26.67,
+        31.6,
+        32.96,
+        73.94
+      ],
+      "overlap": 0.576,
+      "RV_minus_RT_residual": 0.424
+    },
+    "text_residual.11": {
+      "has_text": true,
+      "principal_angles_deg": [
+        25.85,
+        31.69,
+        32.93,
+        72.97
+      ],
+      "overlap": 0.581,
+      "RV_minus_RT_residual": 0.419
+    },
+    "text_residual.12": {
+      "has_text": true,
+      "principal_angles_deg": [
+        25.81,
+        30.7,
+        32.15,
+        74.59
+      ],
+      "overlap": 0.584,
+      "RV_minus_RT_residual": 0.416
+    },
+    "text_residual.13": {
+      "has_text": true,
+      "principal_angles_deg": [
+        25.84,
+        31.89,
+        33.27,
+        74.38
+      ],
+      "overlap": 0.576,
+      "RV_minus_RT_residual": 0.424
+    },
+    "text_residual.14": {
+      "has_text": true,
+      "principal_angles_deg": [
+        26.2,
+        32.36,
+        34.25,
+        73.85
+      ],
+      "overlap": 0.57,
+      "RV_minus_RT_residual": 0.43
+    },
+    "text_residual.15": {
+      "has_text": true,
+      "principal_angles_deg": [
+        26.64,
+        29.12,
+        33.1,
+        75.08
+      ],
+      "overlap": 0.583,
+      "RV_minus_RT_residual": 0.417
+    },
+    "text_residual.16": {
+      "has_text": true,
+      "principal_angles_deg": [
+        26.64,
+        28.71,
+        34.3,
+        71.77
+      ],
+      "overlap": 0.587,
+      "RV_minus_RT_residual": 0.413
+    },
+    "text_residual.17": {
+      "has_text": true,
+      "principal_angles_deg": [
+        26.48,
+        29.59,
+        35.3,
+        70.84
+      ],
+      "overlap": 0.583,
+      "RV_minus_RT_residual": 0.417
+    },
+    "text_residual.18": {
+      "has_text": true,
+      "principal_angles_deg": [
+        25.37,
+        30.25,
+        36.62,
+        69.02
+      ],
+      "overlap": 0.584,
+      "RV_minus_RT_residual": 0.416
+    },
+    "text_residual.19": {
+      "has_text": true,
+      "principal_angles_deg": [
+        24.61,
+        29.91,
+        37.82,
+        68.24
+      ],
+      "overlap": 0.585,
+      "RV_minus_RT_residual": 0.415
+    },
+    "text_residual.2": {
+      "has_text": true,
+      "principal_angles_deg": [
+        46.73,
+        49.47,
+        57.03,
+        89.33
+      ],
+      "overlap": 0.297,
+      "RV_minus_RT_residual": 0.703
+    },
+    "text_residual.20": {
+      "has_text": true,
+      "principal_angles_deg": [
+        25.36,
+        30.77,
+        38.6,
+        66.43
+      ],
+      "overlap": 0.581,
+      "RV_minus_RT_residual": 0.419
+    },
+    "text_residual.21": {
+      "has_text": true,
+      "principal_angles_deg": [
+        23.6,
+        29.28,
+        37.69,
+        61.95
+      ],
+      "overlap": 0.612,
+      "RV_minus_RT_residual": 0.388
+    },
+    "text_residual.22": {
+      "has_text": true,
+      "principal_angles_deg": [
+        24.97,
+        30.37,
+        38.0,
+        59.7
+      ],
+      "overlap": 0.61,
+      "RV_minus_RT_residual": 0.39
+    },
+    "text_residual.23": {
+      "has_text": true,
+      "principal_angles_deg": [
+        24.57,
+        30.29,
+        37.44,
+        55.61
+      ],
+      "overlap": 0.631,
+      "RV_minus_RT_residual": 0.369
+    },
+    "text_residual.24": {
+      "has_text": true,
+      "principal_angles_deg": [
+        24.25,
+        30.58,
+        37.01,
+        55.38
+      ],
+      "overlap": 0.633,
+      "RV_minus_RT_residual": 0.367
+    },
+    "text_residual.25": {
+      "has_text": true,
+      "principal_angles_deg": [
+        24.61,
+        32.11,
+        37.37,
+        50.06
+      ],
+      "overlap": 0.647,
+      "RV_minus_RT_residual": 0.353
+    },
+    "text_residual.26": {
+      "has_text": true,
+      "principal_angles_deg": [
+        24.76,
+        33.84,
+        36.59,
+        46.39
+      ],
+      "overlap": 0.659,
+      "RV_minus_RT_residual": 0.341
+    },
+    "text_residual.27": {
+      "has_text": true,
+      "principal_angles_deg": [
+        23.14,
+        29.77,
+        33.23,
+        40.6
+      ],
+      "overlap": 0.719,
+      "RV_minus_RT_residual": 0.281
+    },
+    "text_residual.3": {
+      "has_text": true,
+      "principal_angles_deg": [
+        40.86,
+        44.08,
+        53.13,
+        88.01
+      ],
+      "overlap": 0.362,
+      "RV_minus_RT_residual": 0.638
+    },
+    "text_residual.4": {
+      "has_text": true,
+      "principal_angles_deg": [
+        35.33,
+        40.56,
+        46.72,
+        81.84
+      ],
+      "overlap": 0.433,
+      "RV_minus_RT_residual": 0.567
+    },
+    "text_residual.5": {
+      "has_text": true,
+      "principal_angles_deg": [
+        30.38,
+        37.75,
+        43.85,
+        76.71
+      ],
+      "overlap": 0.486,
+      "RV_minus_RT_residual": 0.514
+    },
+    "text_residual.6": {
+      "has_text": true,
+      "principal_angles_deg": [
+        26.71,
+        31.92,
+        38.8,
+        73.81
+      ],
+      "overlap": 0.551,
+      "RV_minus_RT_residual": 0.449
+    },
+    "text_residual.7": {
+      "has_text": true,
+      "principal_angles_deg": [
+        27.47,
+        32.99,
+        38.62,
+        71.3
+      ],
+      "overlap": 0.551,
+      "RV_minus_RT_residual": 0.449
+    },
+    "text_residual.8": {
+      "has_text": true,
+      "principal_angles_deg": [
+        25.89,
+        31.83,
+        35.63,
+        71.21
+      ],
+      "overlap": 0.574,
+      "RV_minus_RT_residual": 0.426
+    },
+    "text_residual.9": {
+      "has_text": true,
+      "principal_angles_deg": [
+        26.58,
+        32.96,
+        36.04,
+        73.13
+      ],
+      "overlap": 0.56,
+      "RV_minus_RT_residual": 0.44
+    },
+    "vision_out.0": {
+      "has_text": false
+    },
+    "vision_out.1": {
+      "has_text": false
+    },
+    "vision_out.10": {
+      "has_text": false
+    },
+    "vision_out.11": {
+      "has_text": false
+    },
+    "vision_out.12": {
+      "has_text": false
+    },
+    "vision_out.13": {
+      "has_text": false
+    },
+    "vision_out.14": {
+      "has_text": false
+    },
+    "vision_out.15": {
+      "has_text": false
+    },
+    "vision_out.16": {
+      "has_text": false
+    },
+    "vision_out.17": {
+      "has_text": false
+    },
+    "vision_out.18": {
+      "has_text": false
+    },
+    "vision_out.19": {
+      "has_text": false
+    },
+    "vision_out.2": {
+      "has_text": false
+    },
+    "vision_out.20": {
+      "has_text": false
+    },
+    "vision_out.21": {
+      "has_text": false
+    },
+    "vision_out.22": {
+      "has_text": false
+    },
+    "vision_out.23": {
+      "has_text": false
+    },
+    "vision_out.24": {
+      "has_text": false
+    },
+    "vision_out.25": {
+      "has_text": false
+    },
+    "vision_out.26": {
+      "has_text": false
+    },
+    "vision_out.27": {
+      "has_text": false
+    },
+    "vision_out.28": {
+      "has_text": false
+    },
+    "vision_out.29": {
+      "has_text": false
+    },
+    "vision_out.3": {
+      "has_text": false
+    },
+    "vision_out.30": {
+      "has_text": false
+    },
+    "vision_out.31": {
+      "has_text": false
+    },
+    "vision_out.4": {
+      "has_text": false
+    },
+    "vision_out.5": {
+      "has_text": false
+    },
+    "vision_out.6": {
+      "has_text": false
+    },
+    "vision_out.7": {
+      "has_text": false
+    },
+    "vision_out.8": {
+      "has_text": false
+    },
+    "vision_out.9": {
+      "has_text": false
+    }
+  }
+}

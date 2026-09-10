@@ -1,0 +1,46 @@
+{
+  "model": "Qwen/Qwen2-VL-2B-Instruct",
+  "n_eval": 60,
+  "categories": [
+    "cyber",
+    "weapons",
+    "drugs",
+    "fraud",
+    "harm"
+  ],
+  "ablate_rank": 1,
+  "text_eval": {
+    "base": {
+      "asr_raw": 0.0,
+      "asr_coherent": 0.0,
+      "refusal_rate": 1.0
+    },
+    "text_only_abliteration": {
+      "asr_raw": 1.0,
+      "asr_coherent": 0.083,
+      "refusal_rate": 0.0
+    },
+    "cross_modal_abliteration": {
+      "asr_raw": 1.0,
+      "asr_coherent": 0.1,
+      "refusal_rate": 0.0
+    }
+  },
+  "image_eval": {
+    "base": {
+      "asr_raw": 0.0,
+      "asr_coherent": 0.0,
+      "refusal_rate": 1.0
+    },
+    "text_only_abliteration": {
+      "asr_raw": 1.0,
+      "asr_coherent": 0.533,
+      "refusal_rate": 0.0
+    },
+    "cross_modal_abliteration": {
+      "asr_raw": 1.0,
+      "asr_coherent": 0.217,
+      "refusal_rate": 0.0
+    }
+  }
+}

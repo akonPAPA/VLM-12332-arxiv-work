@@ -1,0 +1,11 @@
+# Extra deps for the research harness (root requirements.txt already covers
+# torch / transformers / safetensors / datasets / pillow / numpy / pyyaml / pytest).
+accelerate>=0.34
+bitsandbytes>=0.43     # 4-bit loading on 8 GB
+peft>=0.13             # self-injected safety LoRA (P2)
+scikit-learn>=1.4      # metrics, bootstrap helpers
+scipy>=1.11            # principal angles / stats
+matplotlib>=3.8        # figures
+einops>=0.8
+# mergekit is used as a CLI/vendored tool for P5 (souping / task arithmetic);
+# install separately per its own instructions to avoid dependency pinning here.
